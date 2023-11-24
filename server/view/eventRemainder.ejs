@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: 'Sora', sans-serif;
+        font-style: normal;
+      }
+      .circleGraphics {
+        width: 592px !important;
+        @media only screen and (max-width: 600px) {
+          background: url('<%=`${eventData.s3BucketPath}/Order-Confirmation-Round-Mobile.png`%>')
+            no-repeat !important;
+          width: auto !important;
+        }
+      }
+      .font-small {
+        @media only screen and (max-width: 600px) {
+          font-size: 14px !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    "
+  >
+    <div
+      style="
+        max-width: 668px;
+        margin: 0 auto;
+        background: url('<%=`${eventData.s3BucketPath}/Right-Curve.png`%>'),
+          #131e29;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-size: 100% 100%;
+      "
+    >
+      <table align="center">
+        <tbody>
+          <tr>
+            <td align="center">
+              <img
+                src="<%=`${eventData.s3BucketPath}/Email+Image+1.png`%>"
+                height="386"
+                width="368"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div
+                style="
+                  background: url('<%=`${eventData.s3BucketPath}/Resend-OTP-Round.png`%>')
+                    no-repeat;
+                  height: 105px;
+                  background-size: 100% 100%;
+                "
+                class="circleGraphics"
+              >
+                <p
+                  style="
+                    color: #be9b57;
+                    font-size: 20px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    padding-top: 25px;
+                    text-align: center;
+                    margin: 0;
+                  "
+                  class="showTitle"
+                >
+                <%=`${eventData.name} `%>
+                </p>
+                <p
+                  style="
+                    color: #fff;
+                    text-align: center;
+                    font-size: 16px;
+                    font-weight: 400;
+                    margin: 0;
+                    text-transform: capitalize;
+                  "
+                >
+                Livestreams Tomorrow <%=`${eventData.displayTime.daypart}`%>
+                </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div
+                style="
+                  color: #BE9B57;
+                  font-size: 36px;
+                  font-weight: 700;
+                  text-align: left;
+                  max-width: 421px;
+                  padding: 40px 0 0;
+                  margin: 0;
+                  text-transform: capitalize;
+                "
+              >
+              Tomorrow <%=`${eventData.displayTime.daypart}`%>:
+            </div>
+              <div
+                style="
+                  color: #FFF;
+                  font-size: 32px;
+                  font-weight: 700;
+                  text-align: left !important;
+                  margin: 0;
+                  max-width: 421px;
+                  text-transform: capitalize;
+                "
+              >
+              The <%=`${eventData.name} `%><br>
+              Livestreams.<br>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div
+                style="
+                  padding-top: 24px;
+                  padding-bottom: 24px;
+                  color: #FFF;
+                  font-size: 36px;
+                  font-weight: 700;
+                  max-width: 415px;
+                  text-align: left;
+                "
+              >
+              Hi <%=`${userinfo.name}`%>, <br>
+            </div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div
+                style="
+                  color: #FFF;
+                  font-size: 16px;
+                  font-weight: 400;
+                  max-width: 415px;
+                  text-align: left;
+                "
+              >
+              The <span style="text-transform: capitalize;"><%=`${eventData.name} `%></span> 
+              is coming to your screen 
+              tomorrow <span style="text-transform: lowercase;"><%=`${eventData.displayTime.daypart}`%></span> live from
+              <span><%=`${eventData?.venueid?.location}`%></span>!
+              <br/><br/>
+              To watch the livestream go to 
+              <a href="<%=`${userinfo.url}&isFromEmail=true`%>" style="color: #3EC4D5;">missuniverse.livebash.com</a> <br>
+                and enter your six digit access code:
+            </div><br>
+              <div style="color: #BE9B57;
+              font-size: 16px;
+              font-weight: 700;
+              max-width: 415px;
+              text-align: left;"><%=`${userinfo.otpArray[0].code} `%></div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <p
+                style="
+                  color: #FFF;
+                  font-size: 16px;
+                  font-weight: 400;
+                  max-width: 415px;
+                  text-align: left;
+                "
+              >
+                Virtual doors open at <%=`${eventData?.displayTime?.
+                  virtualTimeWithCapitalMeridium}`%>, but you can <br>
+                enter the code and verify your device any time <br>
+                prior to the start of the show.<span style="font-weight: 700;"> Enjoy the show!</span>
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <a
+                href="<%=`${userinfo.url}&isFromEmail=true`%>"
+                style="
+                  background-color: #be9b57;
+                  width: auto;
+                  margin: 20px 0 0;
+                  display: block;
+                  font-size: 20px;
+                  padding: 16px 10px;
+                  font-size: 20px;
+                  font-weight: 700;
+                  text-decoration: none;
+                  color: #000;
+                  line-height: normal;
+                  margin: 55px 0 55px;
+                  text-align: center;
+                  max-width: 400px;
+                "
+              >
+                Watch The Show<br /><span
+                  style="font-size: 16px; color: #000"
+                  class="font-small"
+                  ><span style="font-weight: 400">Virtual Doors</span>
+                  <span style="font-weight: 600"> <%=`${eventData?.displayTime?.virtualdoortime}`%> • </span>
+                  <span style="font-weight: 400"> Show</span>
+                  <span style="font-weight: 600"><%=`${eventData?.displayTime?.pststarttime}`%></span></span
+                >
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td style="height: 150px"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

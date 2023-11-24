@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: 'Sora', sans-serif;
+        font-style: normal;
+      }
+      .circleGraphics {
+        width: 592px !important;
+        @media only screen and (max-width: 600px) {
+          background: url('<%=`${eventData.s3BucketPath}/Order-Confirmation-Round-Mobile.png`%>')
+            no-repeat !important;
+          width: auto !important;
+        }
+      }
+      .font-small {
+        @media only screen and (max-width: 600px) {
+          font-size: 14px !important;
+        }
+      }
+      .watch-show {
+      background-color: #BE9B57;
+      max-width: 350px;
+      margin: 20px 0 0;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      color: #000;
+      line-height: normal;
+      margin: 0 0 16px;
+      padding: 26px 0;
+      display: block;
+    }
+    </style>
+  </head>
+  <body
+    style="
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    "
+  >
+    <div
+      style="
+        max-width: 668px;
+        margin: 0 auto;
+        background: url('<%=`${eventData.s3BucketPath}/Right-Curve.png`%>'),
+          #131e29;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-size: 100% 100%;
+      "
+    >
+      <table align="center">
+        <tbody>
+          <tr>
+            <td align="center">
+              <img
+                src="<%=`${eventData.s3BucketPath}/Email+Image+1.png`%>"
+                height="386"
+                width="368"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div
+                style="
+                  background: url('<%=`${eventData.s3BucketPath}/Resend-OTP-Round.png`%>')
+                    no-repeat;
+                  height: 105px;
+                  background-size: 100% 100%;
+                "
+                class="circleGraphics"
+              >
+                <p
+                  style="
+                    color: #be9b57;
+                    font-size: 25px;
+                    font-weight: 600;
+                    text-transform: uppercase;
+                    text-align: center;
+                    margin: 0;
+                  "
+                  class="showTitle"
+                >
+                Your <span style="color: #FFF;
+                font-weight: 800;">MISS UNIVERSE</span><br>
+                <span style="font-size: 22px;
+                font-weight: 600;">Digital Collectible Video <br>
+                  is Now Available</span>
+                </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div
+                style="
+                  padding-top: 50px;
+                  color: #FFF;
+                  font-size: 36px;
+                  font-weight: 700;
+                  max-width: 415px;
+                  text-align: left;
+                "
+              >
+              Hi <%=`${userinfo.name}`%>, <br><br>
+            </div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div
+                style="
+                  color: #FFF;
+                  font-size: 16px;
+                  font-weight: 400;
+                  max-width: 415px;
+                  text-align: left;
+                "
+              >
+              We hope you enjoyed Miss Universe streamed <br>
+              live from El Salvador! You can rewatch the show <br>
+              anytime on Live Bash. <br><br>
+              An account was created when you purchased a <br>
+              ticket, so all you need to do is enter your email to <br>
+              access the show.</div><br>
+              <div style="color: #FFF;
+              text-align: center;
+              font-size: 19px;
+              font-weight: 400;
+              display: block;
+              margin: 0 auto;">Login: [xyz123@xyz123.com]</div><br>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <a class="watch-show" href="" style="color: #000;">
+                Claim Digital Collectible Video
+              </a>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div style="color: #FFF;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              max-width: 415px;
+              text-align: left;">
+                You can  change your automatically generated<br>
+                username in account settings. Watch the show in<br>
+                your portfolio and browse Live Bash to catch up<br>
+                on past performances and see what's upcoming.<br><br>
+                Thanks for watching!
+            </div>
+            </td>
+          </tr>
+          <tr>
+            <td style="height: 150px"></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

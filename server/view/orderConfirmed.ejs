@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        font-family: "Sora", sans-serif;
+        font-style: normal;
+      }
+      .imageThree{
+        @media only screen and (max-width: 600px) { 
+          width: 30% !important;
+        }
+      }
+      .circleGraphics {
+        width: 592px !important;
+        @media only screen and (max-width: 600px) {
+          background: url("<%=`${userinfo.s3BucketPath}/Order-Confirmation-Round-Mobile.png`%>")
+            no-repeat !important;
+          width: auto !important;
+        }
+      }
+      .font-small {
+        @media only screen and (max-width: 600px) {
+          font-size: 14px !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      -webkit-font-smoothing: antialiased;
+      font-size: 14px;
+      line-height: 1.4;
+      margin: 0;
+      padding: 0;
+      -ms-text-size-adjust: 100%;
+      -webkit-text-size-adjust: 100%;
+    "
+  >
+    <div
+      style="
+        max-width: 668px;
+        margin: 0 auto;
+        background: url('<%=`${userinfo.s3BucketPath}/Left-Curve.png`%>'),
+          #131e29;
+        background-repeat: no-repeat;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-size: 100% 100%;
+      "
+    >
+      <table align="center">
+        <tbody>
+          <tr>
+            <td align="center">
+              <img
+                src="<%=`${userinfo.s3BucketPath}/Email+Image+1.png`%>"
+                height="386"
+                width="368"
+              />
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div
+                style="
+                  background: url('<%=`${userinfo.s3BucketPath}/Resend-OTP-Round.png`%>')
+                    no-repeat;
+                  height: 105px;
+                  background-size: 100% 100%;
+                "
+                class="circleGraphics"
+              >
+                <p
+                  style="
+                    color: #be9b57;
+                    font-size: 18px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    padding-top: 15px;
+                    text-align: center;
+                    margin: 0;
+                  "
+                  class="showTitle"
+                >
+                  ORDER CONFIRMED
+                </p>
+                <p
+                  style="
+                    color: #fff;
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 400;
+                    margin: 0;
+                    text-transform: uppercase;
+                  "
+                >
+                  <%=`${userinfo.eventName}`%>
+                </p>
+                <p
+                  style="
+                    color: #fff;
+                    text-align: center;
+                    font-size: 13px;
+                    font-weight: 400;
+                    margin: 0;
+                  "
+                >
+                  Livestream <%= userinfo?.eventTime %>
+                </p>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <div
+                style="
+                  color: #fff;
+                  font-size: 32px;
+                  font-weight: 700;
+                  text-align: left !important;
+                  margin: 0;
+                  max-width: 367px;
+                  padding-top: 20px;
+                "
+              >
+                Hi <%=`${userinfo?.name ? userinfo?.name :
+                userinfo?.user?.name}`%>,
+              </div>
+              <div
+                style="
+                  color: #fff;
+                  font-size: 15px;
+                  font-weight: 400;
+                  text-align: left !important;
+                  margin: 0;
+                  max-width: 367px;
+                "
+              >
+                Thank you for purchasing a ticket to livestream <br />
+                the 72nd MISS UNIVERSE <%=`${userinfo.eventName}`%> on
+                <%=`${userinfo?.formatedDate}`%>.
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td align="center">
+              <p
+                style="
+                  color: #fff;
+                  font-size: 16px;
+                  font-weight: 700;
+                  max-width: 367px;
+                  text-align: left;
+                  padding-top: 20px;
+                  padding-bottom: 20px;
+                "
+              >
+                Here's how to watch the show:
+              </p>
+            </td>
+          </tr>
+          <table>
+            <tbody>
+              <tr style="box-sizing: border-box">
+                <td align="center" width="30%" style="box-sizing: border-box">
+                  <img
+                    src="<%=`${userinfo.s3BucketPath}/Miss-Universe-01.png`%>"
+                    alt=""
+                    width="85px"
+                    height="85px"
+                  />
+                </td>
+                <td align="center" width="70%" style="box-sizing: border-box">
+                  <p
+                    style="
+                      color: #fff;
+                      font-size: 16px;
+                      font-weight: 400;
+                      max-width: 370px;
+                      text-align: left;
+                      margin: 0;
+                    "
+                  >
+                    Request code and livestream the show at <br />
+                    <a
+                      href="<%=`${userinfo.url}&isFromEmail=true`%>"
+                      style="color: #3ec4d5; font-weight: 600"
+                      >missuniverse.livebash.com</a
+                    >
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table>
+            <tbody>
+              <tr style="box-sizing: border-box">
+                <td align="center" width="30%" style="box-sizing: border-box">
+                  <img
+                    src="<%=`${userinfo.s3BucketPath}/Miss-Universe-02.png`%>"
+                    alt=""
+                    width="85px"
+                    height="85px"
+                  />
+                </td>
+                <td align="center" width="70%" style="box-sizing: border-box">
+                  <p
+                    style="
+                      color: #fff;
+                      font-size: 16px;
+                      font-weight: 400;
+                      max-width: 415px;
+                      text-align: left;
+                      margin: 0;
+                    "
+                  >
+                    Virtual doors open at <%=
+                    userinfo?.displayTime?.virtualdoortime %> and the
+                    <br />
+                    show starts at <%= userinfo?.displayTime?.pststarttime %>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table>
+            <tbody>
+              <tr style="box-sizing: border-box">
+                <td align="center" width="23%" class="imageThree" style="box-sizing: border-box">
+                  <img
+                    src="<%=`${userinfo.s3BucketPath}/Miss-Universe-03.png`%>"
+                    alt=""
+                    width="85px"
+                    height="85px"
+                  />
+                </td>
+                <td align="center" width="70%" style="box-sizing: border-box">
+                  <p
+                    style="
+                      color: #fff;
+                      font-size: 16px;
+                      font-weight: 400;
+                      max-width: 415px;
+                      text-align: left;
+                      margin: 0;
+                      padding-bottom: 14px;
+                    "
+                  >
+                    A few days after the event, you will receive an email<br />
+                    to claim a digital collectible video of the show.
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <tr>
+            <td align="center">
+              <a
+                target="_black"
+                href="<%=`${userinfo.url}&isFromEmail=true`%>"
+                style="
+                  background-color: #be9b57;
+                  width: auto;
+                  margin: 20px 0 0;
+                  display: block;
+                  font-size: 20px;
+                  padding: 16px 10px;
+                  font-size: 20px;
+                  font-weight: 700;
+                  text-decoration: none;
+                  color: #000;
+                  line-height: normal;
+                  margin: 55px 0 55px;
+                  text-align: center;
+                  max-width: 400px;
+                "
+              >
+                Watch The Show<br /><span
+                  style="font-size: 16px; color: #000"
+                  class="font-small"
+                  ><span style="font-weight: 400">Virtual Doors</span>
+                  <span style="font-weight: 600"
+                    ><%=`${userinfo?.displayTime?.virtualdoortime}`%> •
+                  </span>
+                  <span style="font-weight: 400">Show</span>
+                  <span style="font-weight: 600"
+                    ><%=`${userinfo?.displayTime?.pststarttime}`%></span
+                  ></span
+                >
+              </a>
+            </td>
+          </tr>
+          <table>
+            <tbody>
+              <tr>
+                <td style="padding-top: 100px"></td>
+              </tr>
+            </tbody>
+          </table>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
